@@ -7,7 +7,8 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Books from "./pages/Books";
 import ReturnBooks from "./pages/ReturnBooks";
-import BorrowedBooks from "./pages/BorrowedBooks";
+import BorrowBooks from "./pages/BorrowedBooks";
+import Students from "./pages/Students";
 import StudentProfile from "./pages/StudentProfile";
 import Profile from "./pages/Profile";
 
@@ -21,8 +22,9 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/books" element={<Books />} />
         <Route path="/returnbooks" element={<ReturnBooks />} />
-        <Route path="/borrowedBooks" element={<BorrowedBooks />} />
+        <Route path="/borrowbooks" element={<BorrowBooks />} />
         <Route path="/studentprofile" element={<StudentProfile />} />
+        <Route path="/students" element={<Students />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>

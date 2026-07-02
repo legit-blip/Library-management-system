@@ -61,13 +61,15 @@ export default function Login() {
             </div>
 
             {/* Sign In Button */}
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold py-3 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6"
-            >
-              Sign In
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            <Link to="/dashboard">
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold py-3 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6"
+              >
+                Sign In
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           </form>
         </div>
 

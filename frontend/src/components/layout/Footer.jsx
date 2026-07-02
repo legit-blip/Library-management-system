@@ -3,7 +3,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-card py-6 text-center text-sm text-muted-foreground">
-      <p>© {currentYear} LibraryHub. All rights reserved.</p>
+      <p>© {currentYear} KCMIT library. All rights reserved.</p>
     </footer>
   );
 }

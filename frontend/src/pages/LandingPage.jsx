@@ -179,26 +179,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Ask a Librarian callout */}
-      <section className="mx-auto max-w-7xl px-6 py-10">
-        <div className="relative flex flex-col items-start justify-between gap-8 overflow-hidden bg-ink px-12 py-16 md:flex-row md:items-center">
-          <div className="pointer-events-none absolute -right-32 -top-32 h-64 w-64 rounded-xl bg-accent/10" />
-          <div className="relative z-10 max-w-xl">
-            <h2 className="font-serif text-3xl font-semibold text-white">
-              Need help finding something?
-            </h2>
-            <p className="mt-3 text-white/80">
-              Our librarians are available online and in person to help with
-              research, recommendations, and more.
-            </p>
-          </div>
-          <button className="relative z-10 flex items-center gap-3 bg-white px-12 py-6 font-bold">
-            <MessageCircle size={20} />
-            Ask a Librarian
-          </button>
-        </div>
-      </section>
-
       {/* Location & Hours */}
       <section className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 py-20 md:flex-row">
         <div className="flex w-full flex-col gap-6 md:w-1/2">
@@ -209,8 +189,8 @@ export default function LandingPage() {
           <div className="flex gap-6">
             <MapPin className="mt-1 flex-none" size={20} />
             <div>
-              <h3 className="font-serif text-xl font-semibold">Main Branch</h3>
-              <p className="text-slate">428 Birchwood Lane, Rivermill</p>
+              <span className="font-semibold">KCMIT LIBRARY</span>
+              <p className="text-slate">Mid baneshwor,kathmandu</p>
             </div>
           </div>
 

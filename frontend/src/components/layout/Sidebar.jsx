@@ -14,7 +14,7 @@ const menuItems = [
   { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
   { label: "Books", path: "/books", icon: BookOpen },
   { label: "Borrow Book", path: "/borrowbooks", icon: RefreshCw },
-  { label: "Return Book", path: "/return", icon: RotateCcw },
+  { label: "Return Book", path: "/returnbooks", icon: RotateCcw },
   { label: "Students", path: "/students", icon: Users },
   { label: "Profile", path: "/profile", icon: User },
 ];
