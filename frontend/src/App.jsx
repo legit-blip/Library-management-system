@@ -5,6 +5,11 @@ import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import Books from "./pages/Books";
+import ReturnBooks from "./pages/ReturnBooks";
+import BorrowedBooks from "./pages/BorrowedBooks";
+import StudentProfile from "./pages/StudentProfile";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -14,6 +19,11 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/returnbooks" element={<ReturnBooks />} />
+        <Route path="/borrowedBooks" element={<BorrowedBooks />} />
+        <Route path="/studentprofile" element={<StudentProfile />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
