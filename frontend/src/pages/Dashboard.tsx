@@ -2,7 +2,13 @@ import DashboardLayout from "../components/layout/DashboardLayout";
 import StatCard from "../components/common/StatCard";
 import ActionButton from "../components/common/ActionButton";
 import StatusBadge from "../components/common/StatusBadge";
-import { BookOpen, ArrowRight, Plus, Activity, Users } from "lucide-react";
+import {
+  BookOpen,
+  ArrowRight,
+  Plus,
+  Users,
+  RotateCcw,
+} from "lucide-react";
 
 type BorrowStatus =
   | "available"
@@ -187,25 +193,5 @@ export default function Dashboard() {
         </div>
       </div>
     </DashboardLayout>
-  );
-}
-
-function RotateCcw(props: any) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M3 7v6h6" />
-      <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13" />
-    </svg>
   );
 }
