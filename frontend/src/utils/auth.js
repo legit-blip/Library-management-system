@@ -1,24 +1,28 @@
 // Small helpers so no component has to touch localStorage keys directly.
 
-export function saveAuth({ jwtToken, name, email }) {
-    localStorage.setItem("token", jwtToken);
-    localStorage.setItem("loggedInUser", JSON.stringify({ name, email }));
+export function saveAuth({ jwtToken, name, email, role }) {
+  localStorage.setItem("token", jwtToken);
+  localStorage.setItem("loggedInUser", JSON.stringify({ name, email, role }));
 }
 
 export function getToken() {
-    return localStorage.getItem("token");
+  return localStorage.getItem("token");
 }
 
 export function getLoggedInUser() {
-    const raw = localStorage.getItem("loggedInUser");
-    return raw ? JSON.parse(raw) : null;
+  const raw = localStorage.getItem("loggedInUser");
+  return raw ? JSON.parse(raw) : null;
+}
+
+export function getRole() {
+  return getLoggedInUser()?.role || null;
 }
 
 export function isAuthenticated() {
-    return Boolean(getToken());
+  return Boolean(getToken());
 }
 
 export function logout() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("loggedInUser");
+  localStorage.removeItem("token");
+  localStorage.removeItem("loggedInUser");
 }

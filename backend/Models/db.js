@@ -1,4 +1,3 @@
-//WMurjW05yeLU5GRz
 const mongoose = require('mongoose');
 const mongo_url = process.env.MONGO_CONN;
 

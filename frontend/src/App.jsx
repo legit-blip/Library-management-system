@@ -14,6 +14,7 @@ import Students from "./pages/Students";
 import StudentProfile from "./pages/StudentProfile";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/common/ProtectedRoute";
+import StudentRoutes from "./routes/StudentRoutes";
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute role="admin">
               <Dashboard />
             </ProtectedRoute>
           }
@@ -36,7 +37,7 @@ const App = () => {
         <Route
           path="/books"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute role="admin">
               <Books />
             </ProtectedRoute>
           }
@@ -44,7 +45,7 @@ const App = () => {
         <Route
           path="/returnbooks"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute role="admin">
               <ReturnBooks />
             </ProtectedRoute>
           }
@@ -52,7 +53,7 @@ const App = () => {
         <Route
           path="/borrowbooks"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute role="admin">
               <BorrowBooks />
             </ProtectedRoute>
           }
@@ -60,7 +61,7 @@ const App = () => {
         <Route
           path="/studentprofile"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute role="admin">
               <StudentProfile />
             </ProtectedRoute>
           }
@@ -68,7 +69,7 @@ const App = () => {
         <Route
           path="/students"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute role="admin">
               <Students />
             </ProtectedRoute>
           }
@@ -76,11 +77,14 @@ const App = () => {
         <Route
           path="/profile"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute role="admin">
               <Profile />
             </ProtectedRoute>
           }
         />
+
+        {/* Student Portal route tree — gated to role="student" internally */}
+        {StudentRoutes}
       </Routes>
     </BrowserRouter>
   );

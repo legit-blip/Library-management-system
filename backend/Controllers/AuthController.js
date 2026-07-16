@@ -12,15 +12,21 @@ const signup = async (req, res) => {
             return res.status(409)
                 .json({ message: "User already exists, you can login", success: false });
         }
-        const userModel = new UserModel({ name, email, password });
-        userModel.password = await bcrypt.hash(passowrd, 10);
+        const role =
+            email.toLowerCase() === (process.env.ADMIN_EMAIL || "").toLowerCase()
+                ? "admin"
+                : "student";
+
+        const userModel = new UserModel({ name, email, password, role });
+        userModel.password = await bcrypt.hash(password, 10);
         await userModel.save();
         res.status(201)
             .json({
-                message: " Signup successfull",
+                message: "Signup successful",
                 success: true
             })
     } catch (err) {
+        console.error("Signup error:", err);
         res.status(500)
             .json({
                 message: "Internal server error",
@@ -47,19 +53,21 @@ const login = async (req, res) => {
         }
 
         const jwtToken = jwt.sign(
-            { email: user.email, _id: user._id },
+            { email: user.email, _id: user._id, role: user.role },
             process.env.JWT_SECRET,
             { expiresIn: '24h' }
         )
         res.status(200)
             .json({
-                message: " login success",
+                message: "Login success",
                 success: true,
                 jwtToken,
                 email,
-                name: user.name
+                name: user.name,
+                role: user.role
             })
     } catch (err) {
+        console.error("Login error:", err);
         res.status(500)
             .json({
                 message: "Internal server error",

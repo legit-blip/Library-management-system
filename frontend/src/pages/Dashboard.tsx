@@ -2,13 +2,7 @@ import DashboardLayout from "../components/layout/DashboardLayout";
 import StatCard from "../components/common/StatCard";
 import ActionButton from "../components/common/ActionButton";
 import StatusBadge from "../components/common/StatusBadge";
-import {
-  BookOpen,
-  ArrowRight,
-  Plus,
-  Users,
-  RotateCcw,
-} from "lucide-react";
+import { BookOpen, ArrowRight, Plus, Activity, Users } from "lucide-react";
 
 type BorrowStatus =
   | "available"
@@ -85,28 +79,24 @@ export default function Dashboard() {
             title="Total Books"
             value="1,245"
             icon={<BookOpen className="h-6 w-6" />}
-            trend={{ value: 5, isPositive: true }}
             color="primary"
           />
           <StatCard
             title="Books Borrowed"
             value="342"
             icon={<ArrowRight className="h-6 w-6" />}
-            trend={{ value: 2, isPositive: true }}
             color="warning"
           />
           <StatCard
             title="Available Books"
             value="903"
             icon={<Plus className="h-6 w-6" />}
-            trend={{ value: 8, isPositive: false }}
             color="success"
           />
           <StatCard
             title="Registered Students"
             value="567"
             icon={<Users className="h-6 w-6" />}
-            trend={{ value: 12, isPositive: true }}
             color="primary"
           />
         </div>
@@ -193,5 +183,25 @@ export default function Dashboard() {
         </div>
       </div>
     </DashboardLayout>
+  );
+}
+
+function RotateCcw(props: any) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M3 7v6h6" />
+      <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13" />
+    </svg>
   );
 }

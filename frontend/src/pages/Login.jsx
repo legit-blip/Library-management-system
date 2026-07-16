@@ -22,12 +22,11 @@ export default function Login() {
       if (result.success) {
         saveAuth(result);
         toast.success(result.message);
-        navigate("/dashboard");
+        navigate(result.role === "admin" ? "/dashboard" : "/student");
       }
     } catch (err) {
       const message =
-        err.response?.data?.message ||
-        "Something went wrong. Please try again.";
+        err.response?.data?.message || "Something went wrong. Please try again.";
       toast.error(message);
     } finally {
       setIsSubmitting(false);
